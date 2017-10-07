@@ -11,13 +11,9 @@ public class App {
 
         ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
 
-        Patient patient = (Patient) context.getBean("patient");
+        Logger logger = (Logger) context.getBean("logger");
 
-        System.out.println(patient);
-
-        for (EmarhencyContact contact:patient.getEmarhencyContacts()){
-            System.out.println(contact);
-
-        }
+        logger.consolewriter("Hi there");
+        logger.filewriter("Hi Mahadi");
     }
 }
